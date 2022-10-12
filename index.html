@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="./index.js" type="module" defer></script>
+</head>
+<body>
+  <div id="fullOverlay">
+    <div id="count_down_area" class="count_down_area">
+      <div id="title" class="container">
+        <div class="animate seven">
+          <span>連</span><span>打</span><span>ゲ</span><span>ー</span><span>ム</span><span>!!</span>
+        </div>
+      </div>
+    </div>
+    <div id="btn_area" class="btn_area">
+      <div id="start_btn" class="start-button" style="z-index:20000">スタート</div>
+    </div>
+  </div>
+
+  <div id="parent">
+    <div class="counter_area">
+      <div id="counter"></div>
+      <div id="start_title" class="hidden">連打!!</div>
+    </div>
+    
+    <div id="sandbag"></div>
+    <img id="bang_clone" class="bang hidden" src="./img/bang_mini.png" style="z-index: 10;">
+  </div>
+
+</body>
+</html>

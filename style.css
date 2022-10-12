@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#fullOverlay{
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  z-index: 10000;
+}
+
+.counter_area {
+  display: flex;
+  align-items: center;
+}
+
+#counter {
+  font-family: 'Arial',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', Meiryo,'ＭＳ ゴシック',sans-serif;
+  color: rgb(35, 35, 35);
+  font-size: 100px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+#start_title {
+  color: rgb(250, 3, 3);
+  font-size: 70px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+#parent {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#sandbag {
+  width: 250px;
+  height: 300px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-image: url(./img/sandbag_start-min.png);
+}
+
+.hidden {
+  display: none;
+}
+
+.bang {
+  position: absolute;
+}
+
+.fadeout {
+  animation : fadeOut 0.6s;
+  animation-fill-mode: both;
+}
+
+.fadeout_count_down {
+  animation : fadeOut 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* タイトルアニメーション */
+/* @import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i'); */
+
+.count_down_area {
+  position: absolute;
+  z-index: 100;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.count_down {
+  font-family: 'Arial',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', Meiryo,'ＭＳ ゴシック',sans-serif;
+  color: #528ff7;
+  -webkit-text-stroke: 1px rgb(252, 251, 251);
+  font-size: 100px;
+  font-weight: bold;
+  width: 100vw;
+  text-align: center;
+  margin: auto;
+}
+
+.container {
+	width: 100vw;
+	margin: auto;
+	font-weight: 900;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.animate {
+	font-size: 50px;
+	margin: 100px 0 0;
+}
+
+.animate span {
+	display: inline-block;
+}
+
+.animate span:nth-of-type(2) {
+	animation-delay: .05s;
+}
+.animate span:nth-of-type(3) {
+	animation-delay: .1s;
+}
+.animate span:nth-of-type(4) {
+	animation-delay: .15s;
+}
+.animate span:nth-of-type(5) {
+	animation-delay: .2s;
+}
+.animate span:nth-of-type(6) {
+	animation-delay: .25s;
+}
+.animate span:nth-of-type(7) {
+	animation-delay: .3s;
+}
+
+/* Animation Seven */
+.seven span {
+	color: #528ff7;
+	opacity: 0;
+  font-size: 50px;
+  font-weight: bold;
+  /* -webkit-text-stroke: 2px rgb(35, 34, 34); */
+	transform: translate(-150px, 0) scale(.3);
+	animation: leftRight .5s forwards;
+}
+
+
+@keyframes leftRight {
+	40% {
+		transform: translate(50px, 0) scale(.7);
+		opacity: 1;
+		color: #528ff7;
+	}
+
+	60% {
+		color: #f3f375;
+	}
+
+	80% {
+		transform: translate(0) scale(2);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translate(0) scale(1);
+		opacity: 1;
+	}
+}
+
+/* スタートボタン */
+.btn_area {
+  position: absolute;
+  z-index: 100;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.start-button {
+  margin: auto;
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  border-radius: 20px;
+  width: 200px;
+  height: 40px;
+  font-weight: bold;
+  border-bottom: 5px solid #2a3fc5;
+  transition: 0.3s;
+  background-color: #5467eb;
+}
+
+.start-button:hover {
+  border-bottom-width: 0;
+  transform: translateY(5px);
+}
+
