@@ -15,11 +15,11 @@ const fullOverlay = document.getElementById('fullOverlay');
 const counter = document.getElementById('counter');
 const parent = document.getElementById('parent');
 const sandbag = document.getElementById('sandbag');
-const bang_clone = document.getElementById('bang_clone');
-const btn_area = document.getElementById('btn_area');
-const start_btn = document.getElementById('start_btn');
-const start_title = document.getElementById('start_title');
-const count_down_area = document.getElementById('count_down_area');
+const bangClone = document.getElementById('bang_clone');
+const btnArea = document.getElementById('btn_area');
+const startBtn = document.getElementById('start_btn');
+const startTitle = document.getElementById('start_title');
+const countDownArea = document.getElementById('count_down_area');
 const title = document.getElementById('title');
 counter.innerText = count;
 
@@ -37,7 +37,7 @@ const countDownNode = (num) => {
     const node = document.createElement('div');
     node.classList.add('count_down');
     node.innerText = num;
-    count_down_area.appendChild(node);
+    countDownArea.appendChild(node);
     node.classList.add('fadeout_count_down');
     setTimeout(() => {
       node.classList.add('hidden');
@@ -51,7 +51,7 @@ const countDown = async () => {
   await countDownNode(2);
   await countDownNode(1);
   fullOverlay.classList.add('hidden');
-  start_title.classList.remove('hidden');
+  startTitle.classList.remove('hidden');
 }
 
 const startGame = async () => {
@@ -73,13 +73,13 @@ const endGame = () => {
   const node = document.createElement('div');
   node.classList.add('count_down');
   node.innerText = count + "回";
-  count_down_area.appendChild(node);
+  countDownArea.appendChild(node);
 }
 
 // クリックイベント
-start_btn.addEventListener('click', function () {
+startBtn.addEventListener('click', function () {
   title.classList.add('hidden');
-  btn_area.classList.add('hidden');
+  btnArea.classList.add('hidden');
   startGame();
 });
 
@@ -100,7 +100,7 @@ parent.addEventListener('click', function (event) {
   const y = click_y - position_y - 60;
   console.log(x, y);
 
-  const bang = bang_clone.cloneNode(true);
+  const bang = bangClone.cloneNode(true);
   parent.appendChild(bang);
   bang.removeAttribute('id');
   bang.style.left = Math.floor(x) + 'px';
