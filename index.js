@@ -10,19 +10,6 @@ const sandbags = [
   "./img/sandbag_right3-min.png",
 ];
 
-let count = 0;
-const fullOverlay = document.getElementById('fullOverlay');
-const counter = document.getElementById('counter');
-const parent = document.getElementById('parent');
-const sandbag = document.getElementById('sandbag');
-const bangClone = document.getElementById('bang_clone');
-const btnArea = document.getElementById('btn_area');
-const startBtn = document.getElementById('start_btn');
-const startTitle = document.getElementById('start_title');
-const countDownArea = document.getElementById('count_down_area');
-const title = document.getElementById('title');
-counter.innerText = count;
-
 const fadeout = (node) => {
   node.classList.add('fadeout');
   setTimeout(function(){ 
@@ -75,6 +62,19 @@ const endGame = () => {
   node.innerText = count + "回";
   countDownArea.appendChild(node);
 }
+
+let count = 0;
+const fullOverlay = document.getElementById('fullOverlay');
+const counter = document.getElementById('counter');
+const parent = document.getElementById('parent');
+const sandbag = document.getElementById('sandbag');
+const bangClone = document.getElementById('bang_clone');
+const btnArea = document.getElementById('btn_area');
+const startBtn = document.getElementById('start_btn');
+const startTitle = document.getElementById('start_title');
+const countDownArea = document.getElementById('count_down_area');
+const title = document.getElementById('title');
+counter.innerText = count;
 
 // クリックイベント
 startBtn.addEventListener('click', function () {
