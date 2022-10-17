@@ -10,6 +10,42 @@ const sandbags = [
   "./img/sandbag_right3-min.png",
 ];
 
+let count = 0;
+const protocol = location.protocol;
+const hostname = location.hostname;
+const fullOverlay = document.getElementById('fullOverlay');
+const counter = document.getElementById('counter');
+const parent = document.getElementById('parent');
+const sandbag = document.getElementById('sandbag');
+const bangClone = document.getElementById('bang_clone');
+const startBtnArea = document.getElementById('start_btn_area');
+const startBtn = document.getElementById('start_btn');
+const startTitle = document.getElementById('start_title');
+const titleArea = document.getElementById('title_area');
+const title = document.getElementById('title');
+const resetBtnArea = document.getElementById('reset_btn_area');
+const resetBtn = document.getElementById('reset_btn');
+const twitterArea = document.getElementById('twitter_area');
+const twitterShare = document.getElementById('twitter_share');
+counter.innerText = count;
+
+const init = () => {
+  count = 0;
+  counter.innerText = count;
+  const countDownArea = document.getElementById('count_down_area');
+  countDownArea.remove();
+  const node = document.createElement('div');
+  node.setAttribute('id', 'count_down_area');
+  node.classList.add('count_down_area');
+  titleArea.appendChild(node);
+  startTitle.classList.add('hidden');
+  startBtnArea.classList.remove('hidden');
+  resetBtnArea.classList.add('hidden');
+  twitterArea.classList.add('hidden');
+  title.classList.remove('hidden');
+  sandbag.style.backgroundImage = `url(img/sandbag_start-min.png)`;
+}
+
 const fadeout = (node) => {
   node.classList.add('fadeout');
   setTimeout(function(){ 
@@ -21,6 +57,7 @@ const randRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min
 
 const countDownNode = (num) => {
   return new Promise((resolve, reject) => {
+    const countDownArea = document.getElementById('count_down_area');
     const node = document.createElement('div');
     node.classList.add('count_down');
     node.innerText = num;
@@ -57,30 +94,30 @@ const playGame = () => {
 
 const endGame = () => {
   fullOverlay.classList.remove('hidden');
+  const countDownArea = document.getElementById('count_down_area');
   const node = document.createElement('div');
   node.classList.add('count_down');
   node.innerText = count + "回";
   countDownArea.appendChild(node);
+  resetBtnArea.classList.remove('hidden');
+  twitterArea.classList.remove('hidden');
+  makeTwiterUrl(count);
 }
 
-let count = 0;
-const fullOverlay = document.getElementById('fullOverlay');
-const counter = document.getElementById('counter');
-const parent = document.getElementById('parent');
-const sandbag = document.getElementById('sandbag');
-const bangClone = document.getElementById('bang_clone');
-const btnArea = document.getElementById('btn_area');
-const startBtn = document.getElementById('start_btn');
-const startTitle = document.getElementById('start_title');
-const countDownArea = document.getElementById('count_down_area');
-const title = document.getElementById('title');
-counter.innerText = count;
+const makeTwiterUrl = (count) => {
+  const url = `https://twitter.com/share?url=https://game.rude7.com/barrage/&via=rude_rockers&related=rude_rockers&hashtags=hashtag,hashtag2&text=連打記録${count}回!!`;
+  twitterShare.setAttribute('href', url);
+}
 
 // クリックイベント
 startBtn.addEventListener('click', function () {
   title.classList.add('hidden');
-  btnArea.classList.add('hidden');
+  startBtnArea.classList.add('hidden');
   startGame();
+});
+
+resetBtn.addEventListener('click', function () {
+  init();
 });
 
 
@@ -113,4 +150,6 @@ parent.addEventListener('click', function (event) {
   sandbag.style.backgroundImage = `url(${sandbags[num]})`;
 });
 
-
+window.onload = () => {
+  init();
+}

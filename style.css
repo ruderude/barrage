@@ -184,7 +184,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
-.start-button {
+.start_button {
   margin: auto;
   margin-top: 60px;
   display: flex;
@@ -203,8 +203,21 @@ body {
   background-color: #5467eb;
 }
 
-.start-button:hover {
+.start_button:hover {
   border-bottom-width: 0;
   transform: translateY(5px);
 }
 
+.twitter_area {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.twitter_img {
+  width: 150px;
+  margin-top: 100px;
+}
